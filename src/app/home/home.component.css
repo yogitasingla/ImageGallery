@@ -1,0 +1,22 @@
+#card1{
+  background-color: bisque;
+
+  padding: 40px 40px 40px 40px;
+  text-align: center;
+}
+#card2{
+background-color: coral;
+text-align: center;
+padding: 40px 40px 40px 40px;
+font-family: monospace;
+}
+#card3{
+background-color: cyan;
+text-align: center;
+padding: 40px 40px 40px 40px;
+
+}
+.body{
+  margin: 30px 30px 30px 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

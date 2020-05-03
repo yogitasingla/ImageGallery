@@ -1,0 +1,86 @@
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3" id="col">
+
+      <mat-card>
+        <h3>Login with Email</h3>
+
+      <mat-form-field >
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+        [(ngModel)]="email"
+               placeholder="Ex. pat@example.com" required>
+
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+<mat-form-field>
+  <input type="password" matInput placeholder="Password" required [(ngModel)]="password" [ngModelOptions]="{standalone:true}">
+</mat-form-field>
+<button mat-raised-button color="primary" id="loginButton" [disabled]="!email ||  !password || emailFormControl.hasError('email')  "
+ type="submit" (click)="login()">LogIn with Password</button>
+ </mat-card>
+    </div>
+</div>
+
+<br>
+<br>
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3" id="col">
+      <mat-card>
+        <h3>Login with OTP</h3>
+        <mat-form-field class="no">
+          <input matInput placeholder="Mobile_no"  [formControl]="phoneFormControl"
+          [errorStateMatcher]="matcher"
+            [(ngModel)]="phone_no" maxlength="10" >
+
+           <mat-error *ngIf="phoneFormControl.hasError('pattern') && !phoneFormControl.hasError('required')">
+            Please enter a valid Mobile no
+          </mat-error>
+          <mat-error *ngIf="phoneFormControl.hasError('required')">
+            phone no is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary"
+        type="submit"  id="loginButton"
+        [disabled]="!phone_no|| phoneFormControl.hasError('pattern')">LogIn with OTP</button>
+      </mat-card>
+</div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-6 offset-md-3" id="col">
+    <p>Login with Social Account</p>
+    <div (click)="google()">
+      <img src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+    </div>
+
+
+
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3" id="col">
+      <h5 >If your Account is not registred please register now</h5>
+      <button mat-raised-button color="warn" id="registrationButton"  (click)="Registrationpage()">Registration</button>
+
+      </div>
+      </div>
+</div>

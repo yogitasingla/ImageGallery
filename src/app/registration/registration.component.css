@@ -1,0 +1,16 @@
+.container
+{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+mat-form-field{
+  width: 100%;
+}
+.row{
+  text-align: center;
+}
+#col{
+  text-align: center;
+}

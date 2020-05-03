@@ -1,0 +1,38 @@
+<p>gallery works!</p>
+
+
+  <div class="row" >
+    <div class="col-md-4"  *ngFor="let imageDetail of imageDetails">
+
+        <mat-card >
+          <mat-card-content>
+
+            <img [src]="imageDetail.imageUrl"style="height: 100%;width: 100%; ">
+
+          </mat-card-content>
+        </mat-card>
+
+
+
+    </div>
+  </div>
+
+
+<!-- <div class="container">
+  <mat-grid-list cols="3" rowHeight="100px" rowWidth="100px" >
+    <mat-grid-tile rowspan='4'
+     *ngFor="let imageDetail of imageDetails">
+
+
+        <img [src]="imageDetail.imageUrl" style="height: 100%;width: 100%; ">
+
+
+
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div> -->
+
+<!-- <div class="row">
+  <mdb-image-modal *ngFor="let imageDetail of imageDetails" type="margin"></mdb-image-modal>
+</div> -->

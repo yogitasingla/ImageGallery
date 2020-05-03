@@ -1,0 +1,82 @@
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3" id="col">
+      <mat-card>
+        <mat-form-field>
+          <input type="text" id="a1" matInput required placeholder="Full Name" >
+        </mat-form-field>
+        <br>
+        <mat-form-field >
+          <mat-label>Email</mat-label>
+          <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+          [(ngModel)]="email"
+                 placeholder="Ex. pat@example.com" required>
+
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput type="text" required placeholder="Country">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="no">
+          <input matInput placeholder="Mobile_no"  [formControl]="phoneFormControl"
+          [errorStateMatcher]="matcher"
+          required
+            [(ngModel)]="phone_no" maxlength="10" >
+
+           <mat-error *ngIf="phoneFormControl.hasError('pattern') && !phoneFormControl.hasError('required')">
+            Please enter a valid Mobile no
+          </mat-error>
+          <mat-error *ngIf="phoneFormControl.hasError('required')">
+            phone no is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Date of Birth</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Gender</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let gender of Gender" [value]="gender.value">
+              {{gender.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="warn" id="registrationButton"  (click)="Registrationpage()">
+          Register</button>
+        <br>
+      </mat-card>
+
+    </div>
+
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-6 offset-md-3" id="col">
+      <h4 >Already have an account?</h4>
+
+
+      </div>
+      <div class="col-md-6 offset-md-3" id="col">
+        <button mat-raised-button color="accent" id="registrationButton"  (click)="login()">Login</button>
+      </div>
+      </div>
+
+
+</div>
