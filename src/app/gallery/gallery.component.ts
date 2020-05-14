@@ -10,6 +10,7 @@ import { GallerySService } from './../gallery-s.service';
 export class GalleryComponent implements OnInit {
 
   imageDetails:imageDetail[];
+  like=0;
 
   constructor(private GallerySService:GallerySService) { }
 
@@ -17,6 +18,11 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit() {
     this.imageDetails= this.GallerySService.getAllImages();
+    console.log('this.like');
+
+  }
+  onlike(){
+  this.like=this.like+1;
   }
 
 

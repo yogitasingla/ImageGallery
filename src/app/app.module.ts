@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -5,9 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-  import {MatCardModule} from '@angular/material/card';
-  //import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
-  import {FormsModule} from "@angular/forms";
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+import {FormsModule} from "@angular/forms";
 import{ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
@@ -30,7 +31,17 @@ import {MatRadioModule} from '@angular/material/radio';
 import { GalleryComponent } from './gallery/gallery.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ShowimageComponent } from './showimage/showimage.component';
-// import { MDBBootstrapModules } from 'ng-mdb-pro';
+import { UploadComponent } from './upload/upload.component';
+ import{AngularFireModule} from 'angularfire2';
+ import{AngularFireStorageModule} from 'angularfire2/storage'
+ import{AngularFireDatabaseModule} from 'angularfire2/database';
+import { YogiComponent } from './yogi/yogi.component';
+import{AngularFirestoreModule}from 'angularfire2/firestore';
+import { UploadIMageComponent } from './upload-image/upload-image.component';
+import { ImagesComponent } from './images/images.component';
+import { ImageComponent } from './images/image/image.component';
+import { ImageListComponent } from './images/image-list/image-list.component'
+//import{AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database'
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +51,13 @@ import { ShowimageComponent } from './showimage/showimage.component';
     HomeComponent,
     DocAppointmentComponent,
     GalleryComponent,
-    ShowimageComponent
+    ShowimageComponent,
+    UploadComponent,
+    YogiComponent,
+    UploadIMageComponent,
+    ImagesComponent,
+    ImageComponent,
+    ImageListComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +82,12 @@ import { ShowimageComponent } from './showimage/showimage.component';
     MatRadioModule,
     MatNativeDateModule,
     MatGridListModule,
+    MatDialogModule,
+     AngularFireDatabaseModule,
+     AngularFirestoreModule,
+     AngularFireStorageModule,
+     AngularFireModule.initializeApp(environment.firebase),
+
     // MDBBootstrapModulesPro.forRoot()
   ],
   providers: [],

@@ -1,14 +1,36 @@
-<p>gallery works!</p>
 
-
+<div class="contain">
   <div class="row" >
-    <div class="col-md-4"  *ngFor="let imageDetail of imageDetails">
+    <div class="col-md-4 col-sm-6 mb-4 "  *ngFor="let imageDetail of imageDetails">
 
-        <mat-card >
-          <mat-card-content>
+        <mat-card style="height: 100%;width: 100%; ">
+          <mat-card-content style="height: 100%;width: 100%; ">
+            <div class="con">
 
-            <img [src]="imageDetail.imageUrl"style="height: 100%;width: 100%; ">
 
+            <div class="middle">
+              <div class="text">
+                <p>{{imageDetail.imagetag}} </p>
+                  <!-- <i class="fas fa-heart"></i> -->
+                  <span class="material-icons " (click)="onlike()" >
+                    favorite_border
+                    </span>
+                  <!-- <div [hidden]="like>0 ?'false':'true'"  > -->
+                    <span class="material-icons red600"  >
+                      favorite
+                      </span>
+                      {{like}}
+                  <!-- </div> -->
+
+
+
+
+
+               </div>
+            </div>
+            <img [src]="imageDetail.imageUrl" [alt]="imageDetail.imagetag" class="image"
+            style="height: 100%;width: 100%; "  [routerLink]="['/image',imageDetail.id]">
+          </div>
           </mat-card-content>
         </mat-card>
 
@@ -16,7 +38,7 @@
 
     </div>
   </div>
-
+</div>
 
 <!-- <div class="container">
   <mat-grid-list cols="3" rowHeight="100px" rowWidth="100px" >

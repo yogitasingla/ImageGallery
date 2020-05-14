@@ -1,0 +1,15 @@
+<input type="file" placeholder="image Url" [(ngModel)]="imageUrl">
+<img [src]="this.imageUrl">
+<br>
+<input type="text" placeholder="image Tag" [(ngModel)]="imageTag">
+<br>
+<textarea placeholder="Image Details" [(ngModel)]="imageDetail"></textarea>
+<br>
+<button type="submit" (click)="submit()">Submit</button>
+<ul *ngFor='let image of images |async'>
+  <li >
+    <img [src]="image.imageUrl">
+    <p>{{image.imageTag}}</p>
+
+  </li>
+</ul>
